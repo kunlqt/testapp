@@ -45,7 +45,6 @@ class LoginActivity: AppCompatActivity(){
 
         // set on-click listener
         btn_login.setOnClickListener {
-            Toast.makeText(this@LoginActivity, "You clicked login.", Toast.LENGTH_SHORT).show()
             val strUsername = txtUsername.text.toString().trim()
             val strPassword = txtPassword.text.toString().trim()
 
@@ -74,6 +73,8 @@ class LoginActivity: AppCompatActivity(){
                 userViewModel.saveActiveUser(result.userId, result.userName, result.x_acc)
                 val loginIntent = Intent(this, LogedinActivity::class.java)
                 startActivity(loginIntent)
+            }else{
+                Toast.makeText(this@LoginActivity, "Login Failed!!!", Toast.LENGTH_SHORT).show()
             }
 
         }

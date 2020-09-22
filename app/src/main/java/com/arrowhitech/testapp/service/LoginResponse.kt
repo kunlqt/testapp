@@ -12,6 +12,6 @@ data class LoginResponse(
 }
 
 data class LoginResponseData(
-        var userId: String?,
-        var userName: String?,
-        var x_acc: String?)
+        var userId: String,
+        var userName: String,
+        var x_acc: String)

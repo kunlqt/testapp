@@ -23,8 +23,13 @@ class UserRepo(private val loginService: LoginService) {
 
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 Log.d("KUNLQT", "RETROFIT_RESPONSE_X-Acc====" + response.headers().get("X-Acc"))
-                Log.d("KUNLQT", "RETROFIT_RESPONSE_BODY====" + response.body()?.user.toString())
-                callBack(LoginResponseData(response.body()?.user?.userId, response.body()?.user?.userName, response.headers().get("X-Acc")))
+                Log.d("KUNLQT", "RETROFIT_RESPONSE_BODY====" + response.body().toString())
+
+                //for now not check errorCode response, "errorCode": "01","00" is reversed
+                if (response.body() != null && response.body()?.user != null && response.headers().get("X-Acc") != null)
+                    callBack(LoginResponseData(response.body()!!.user.userId, response.body()!!.user.userName, response.headers().get("X-Acc")!!))
+                else
+                    callBack(null)
             }
 
         })

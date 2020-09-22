@@ -56,7 +56,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:visibility="invisible"
+                        android:visibility="gone"
                         android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="15sp" />
@@ -96,7 +96,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:visibility="invisible"
+                        android:visibility="gone"
                         android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="15sp" />
